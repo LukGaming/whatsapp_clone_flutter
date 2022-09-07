@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_clone/models/Contact.dart';
+import 'package:whatsapp_clone/models/contact.dart';
 
 class Conversation extends StatelessWidget {
   final Contact contact;

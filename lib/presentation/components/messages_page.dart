@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_clone/models/Contact.dart';
+import 'package:whatsapp_clone/models/contact.dart';
+import 'package:whatsapp_clone/presentation/components/conversation.dart';
 import 'package:whatsapp_clone/presentation/components/conversation_list_tile.dart';
 
 class MessagesPage extends StatelessWidget {
@@ -34,7 +35,17 @@ class MessagesPage extends StatelessWidget {
       child: ListView.builder(
         itemCount: contactList.length,
         itemBuilder: (context, index) {
-          return Conversation(contact: contactList[index]);
+          return InkWell(
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) =>
+                    ContactConversation(contact: contactList[index]),
+              ));
+            },
+            child: Conversation(
+              contact: contactList[index],
+            ),
+          );
         },
       ),
     );

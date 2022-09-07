@@ -12,21 +12,22 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.green,
-        textTheme: const TextTheme(
-          headline1: TextStyle(color: Colors.white),
-          headline2: TextStyle(color: Colors.white),
-          headline3: TextStyle(color: Colors.white),
-          headline4: TextStyle(color: Colors.white),
-          headline5: TextStyle(color: Colors.white),
-          bodyText1: TextStyle(color: Colors.white),
-          bodyText2: TextStyle(color: Colors.white),
-          subtitle1: TextStyle(color: Colors.white),
-          subtitle2: TextStyle(color: Colors.white),
-        ),
-      ),
+          primarySwatch: Colors.green,
+          textTheme: const TextTheme(
+            headline1: TextStyle(color: Colors.white),
+            headline2: TextStyle(color: Colors.white),
+            headline3: TextStyle(color: Colors.white),
+            headline4: TextStyle(color: Colors.white),
+            headline5: TextStyle(color: Colors.white),
+            bodyText1: TextStyle(color: Colors.white),
+            bodyText2: TextStyle(color: Colors.white),
+            subtitle1: TextStyle(color: Colors.white),
+            subtitle2: TextStyle(color: Colors.white),
+          ),
+          backgroundColor: Colors.black),
       home: const BarTabController(),
       debugShowCheckedModeBanner: false,
+      color: Colors.black,
     );
   }
 }
