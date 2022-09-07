@@ -1,44 +1,40 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/models/Contact.dart';
+import 'package:whatsapp_clone/presentation/components/conversation_list_tile.dart';
 
 class MessagesPage extends StatelessWidget {
   const MessagesPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    List<Contact> contactList = [
+      Contact(
+        id: 0,
+        profileAvatar: "https://picsum.photos/id/237/200/300",
+        name: "Jp",
+      ),
+      Contact(
+        id: 0,
+        profileAvatar: "https://picsum.photos/id/237/200/300",
+        name: "Eliza",
+      ),
+      Contact(
+        id: 0,
+        profileAvatar: "https://picsum.photos/id/237/200/300",
+        name: "Elliezer",
+      ),
+      Contact(
+        id: 0,
+        profileAvatar: "https://picsum.photos/id/237/200/300",
+        name: "Eliu",
+      ),
+    ];
     return Container(
       decoration: const BoxDecoration(color: Colors.black),
       child: ListView.builder(
-        itemCount: 20,
+        itemCount: contactList.length,
         itemBuilder: (context, index) {
-          return Stack(
-            children: [
-              ListTile(
-                leading: CircleAvatar(
-                  radius: 18,
-                  child: Image.network(
-                    "https://natuurwetenschappen-diligentia.nl/wp-content/uploads/2021/01/avatar-Tonny-Regensburg.jpg",
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                title: const Text(
-                  "João Paulo",
-                ),
-                subtitle: const Text(
-                  "acho que vou comecar pelas coisas mais simples",
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-              const Positioned(
-                top: 15,
-                right: 10,
-                child: Text(
-                  "12:15",
-                  style: TextStyle(fontSize: 12),
-                ),
-              )
-            ],
-          );
+          return Conversation(contact: contactList[index]);
         },
       ),
     );
